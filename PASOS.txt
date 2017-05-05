@@ -1,0 +1,73 @@
+/*** EJERCICIO ***/
+
+Vamos a realizar unos tests avanzados llamados PROPERTY BASED (con programación funcional). Es una
+técnica muy diferente a las anteriores. Son tests EXPLORATORIOS y sirven para cuando hay mucha casuística
+y no queremos probar uno a uno todos los casos. Estos tests se pueden combinar con los normales.
+
+Ver estos enlaces para más información:
+
+http://blog.karumi.com/property-based-testing-part-1/
+http://blog.karumi.com/property-based-testing-part-2/
+http://blog.karumi.com/property-based-testing-part-3/
+
+
+/*** PASOS ***/
+
+1) Forkeamos el proyecto desde https://github.com/Karumi/MaxibonKataJava y nos vamos a la rama de write-tests
+
+2) Opcionalmente añadimos el repositorio a TravisCI para la integración contínua. El checkstyle del
+archivo de travis.yml lo sustituimos por el de este proyecto (el checkstyle que viene por defecto
+son los estilos de Karumi y hay que quitarlo)
+
+
+/*** PREVIO TESTS ***/
+
+Enunciado muy resumido (ver github para el completo):
+
+En la oficina de Karumi hay 5 developers. Cada uno de ellos puede coger varios maxibones. Cuando queden 2 o
+menos se deben comprar 10 más. Cuando queden 2 o menos, el developer tendrá que enviar por chat utilizando
+la API de Slack y escribir: "Hi guys, I'm <NAME OF THE DEVELOPER>. We need more maxibons!".
+
+Las clases de los tests tendrán la extensión "Properties" en vez de "Test"
+
+Creamos una clase para generar números positivos, ya que no podemos coger del frigo un número negativo de
+maxibones.
+
+Para ver los valores que se generan usaremos System.out.println cuando sea necesario
+
+NOTA: Para los generadores los "List<@From>KarumiesGenerator.class"
+
+
+/*** TESTS ***/
+
+1) El número de maxibons debe ser siempre 0 o mayor
+
+2) El nombre del desarrollador es asignado en construcción
+
+3) Comprobamos que ya están asignados el número de maxibons que cogerá cada desarrollador (comprobamos que
+es un un test unitario normal con @Test)
+
+Creamos una nueva clase de para Tests llamada KarumiHQProperties
+
+4) Comprobamos que después de que va un desarrollador al frigo a coger maxibons siempre quedarán más de 2
+
+5) Comprobamos que después de que va un desarrollador al frigo a coger maxibons siempre quedarán más de 2 
+y como máximo 12
+
+6) Comprobamos que después de que va un grupo de desarrolladores al frigo a coger maxibons siempre quedarán 
+más de 2 y como máximo 12
+
+7) Comprobar que cuando va a coger maxibons un desarrollador muy hambriento quedarán siempre 10 o más maxibons
+
+8) Comprobar que cuando va a coger maxibons un desarrollador poco hambriento quedarán siempre 10 o menos maxibons
+
+9) Comprobar que si un developer coge 4 maxibons quedarán 6
+
+10) Comprobar que si un developer coge 9 maxibons quedarán 11
+
+11) Comprobar que si un developer coge 15 maxibons quedarán 10
+
+12) Después de que un developer abra el frigorífico siempre habrá más de 2 maxibons
+
+
+

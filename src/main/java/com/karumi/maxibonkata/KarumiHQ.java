@@ -19,17 +19,17 @@ package com.karumi.maxibonkata;
 import java.util.Collections;
 import java.util.List;
 
-public class KarumiHQs {
+public class KarumiHQ {
 
   private final Chat chat;
 
   private int maxibonsLeft;
 
-  public KarumiHQs() {
+  public KarumiHQ() {
     this(new ConsoleChat());
   }
 
-  public KarumiHQs(Chat chat) {
+  public KarumiHQ(Chat chat) {
     this.chat = chat;
     this.maxibonsLeft = 10;
   }
